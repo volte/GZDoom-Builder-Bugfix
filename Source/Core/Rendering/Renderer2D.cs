@@ -103,8 +103,8 @@ namespace CodeImp.DoomBuilder.Rendering
 		private float scaleinv;
 		private float offsetx;
 		private float offsety;
-		private float translatex;
-		private float translatey;
+		private float translatex = 0.0f;
+		private float translatey = 0.0f;
 		private float linenormalsize;
 		private float minlinelength; //mxd. Linedef should be longer than this to be rendered
 		private float minlinenormallength; //mxd. Linedef direction indicator should be longer than this to be rendered 
@@ -908,6 +908,11 @@ namespace CodeImp.DoomBuilder.Rendering
 				do { size *= 2; } while(size * scale <= 6f);
 			float sizeinv = 1f / size;
 
+			if (size < 1e-10 || float.IsInfinity(size) || float.IsNaN(size))
+			{
+				return;
+			}
+
 			// Determine map coordinates for view window
 			Vector2D ltview = DisplayToMap(new Vector2D(0, 0));
 			Vector2D rbview = DisplayToMap(new Vector2D(windowsize.Width, windowsize.Height));
@@ -932,8 +937,13 @@ namespace CodeImp.DoomBuilder.Rendering
 
 			bool xminintersect = true, xmaxintersect = true, yminintersect = true, ymaxintersect = true;
 
-			int num = 0;            
+			int num = 0;
 			while (xminintersect || xmaxintersect || yminintersect || ymaxintersect) {
+				if (num > 1e6)
+				{
+					break;
+				}
+
 				Vector2D xminstart = center - num * size * dy;
 				Vector2D xmaxstart = center + num * size * dy;
 				Vector2D yminstart = center - num * size * dx;
