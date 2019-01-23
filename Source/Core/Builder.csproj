@@ -1285,6 +1285,9 @@
     <EmbeddedResource Include="Resources\Folder96.png" />
     <EmbeddedResource Include="Resources\Folder96Up.png" />
     <None Include="Resources\Github.png" />
+    <Content Include="Resources\GridOrigin.png" />
+    <Content Include="Resources\GridRotate.png" />
+    <Content Include="Resources\GridRotateReset.png" />
     <Content Include="Resources\Light.png" />
     <None Include="Resources\Lightbulb.png" />
     <None Include="Resources\LightDisabled.png" />

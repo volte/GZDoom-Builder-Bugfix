@@ -290,6 +290,10 @@ namespace CodeImp.DoomBuilder.Windows
 			this.itemaligngridtolinedef = new System.Windows.Forms.ToolStripMenuItem();
 			this.itemsetgridorigintovertex = new System.Windows.Forms.ToolStripMenuItem();
 			this.itemresetgrid = new System.Windows.Forms.ToolStripMenuItem();
+			this.buttonaligngridtolinedef = new System.Windows.Forms.ToolStripButton();
+			this.buttonsetgridorigintovertex = new System.Windows.Forms.ToolStripButton();
+			this.buttonresetgrid = new System.Windows.Forms.ToolStripButton();
+			this.separatorgrid = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
@@ -939,6 +943,7 @@ namespace CodeImp.DoomBuilder.Windows
 			this.itemaligngridtolinedef.Size = new System.Drawing.Size(215, 22);
 			this.itemaligngridtolinedef.Tag = "builder_aligngridtolinedef";
 			this.itemaligngridtolinedef.Text = "Align Grid To Selected Linedef";
+			this.itemaligngridtolinedef.Image = global::CodeImp.DoomBuilder.Properties.Resources.GridRotate;
 			this.itemaligngridtolinedef.Click += new System.EventHandler(this.InvokeTaggedAction);
 
 			// 
@@ -948,6 +953,7 @@ namespace CodeImp.DoomBuilder.Windows
 			this.itemsetgridorigintovertex.Size = new System.Drawing.Size(215, 22);
 			this.itemsetgridorigintovertex.Tag = "builder_setgridorigintovertex";
 			this.itemsetgridorigintovertex.Text = "Set Grid Origin To Selected Vertex";
+			this.itemsetgridorigintovertex.Image = global::CodeImp.DoomBuilder.Properties.Resources.GridOrigin;
 			this.itemsetgridorigintovertex.Click += new System.EventHandler(this.InvokeTaggedAction);
 
 			// 
@@ -957,6 +963,7 @@ namespace CodeImp.DoomBuilder.Windows
 			this.itemresetgrid.Size = new System.Drawing.Size(215, 22);
 			this.itemresetgrid.Tag = "builder_resetgrid";
 			this.itemresetgrid.Text = "Reset Grid Transform";
+			this.itemresetgrid.Image = global::CodeImp.DoomBuilder.Properties.Resources.GridRotateReset;
 			this.itemresetgrid.Click += new System.EventHandler(this.InvokeTaggedAction);
 
 			// 
@@ -1387,6 +1394,10 @@ namespace CodeImp.DoomBuilder.Windows
 			this.seperatorviews,
 			this.buttonsnaptogrid,
 			this.buttontoggledynamicgrid,
+			this.buttonaligngridtolinedef,
+			this.buttonsetgridorigintovertex,
+			this.buttonresetgrid,
+			this.separatorgrid,
 			this.buttonautomerge,
 			this.buttonsplitjoinedsectors,
 			this.buttonautoclearsidetextures,
@@ -1858,6 +1869,39 @@ namespace CodeImp.DoomBuilder.Windows
 			this.buttontoggledynamicgrid.Tag = "builder_toggledynamicgrid";
 			this.buttontoggledynamicgrid.Text = "Dynamic Grid Size";
 			this.buttontoggledynamicgrid.Click += new System.EventHandler(this.InvokeTaggedAction);
+			// 
+			// buttonaligngridtolinedef
+			//
+			this.buttonaligngridtolinedef.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.buttonaligngridtolinedef.Image = global::CodeImp.DoomBuilder.Properties.Resources.GridRotate;
+			this.buttonaligngridtolinedef.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.buttonaligngridtolinedef.Name = "buttonaligngridtolinedef";
+			this.buttonaligngridtolinedef.Size = new System.Drawing.Size(23, 22);
+			this.buttonaligngridtolinedef.Tag = "builder_aligngridtolinedef";
+			this.buttonaligngridtolinedef.Text = "Align Grid to Selected Linedef";
+			this.buttonaligngridtolinedef.Click += new System.EventHandler(this.InvokeTaggedAction);
+			// 
+			// buttonsetgridorigintovertex
+			// 
+			this.buttonsetgridorigintovertex.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.buttonsetgridorigintovertex.Image = global::CodeImp.DoomBuilder.Properties.Resources.GridOrigin;
+			this.buttonsetgridorigintovertex.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.buttonsetgridorigintovertex.Name = "buttonsetgridorigintovertex";
+			this.buttonsetgridorigintovertex.Size = new System.Drawing.Size(23, 22);
+			this.buttonsetgridorigintovertex.Tag = "builder_setgridorigintovertex";
+			this.buttonsetgridorigintovertex.Text = "Set Grid Origin to Selected Vertex";
+			this.buttonsetgridorigintovertex.Click += new System.EventHandler(this.InvokeTaggedAction);
+			// 
+			// buttonresetgrid
+			// 
+			this.buttonresetgrid.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.buttonresetgrid.Image = global::CodeImp.DoomBuilder.Properties.Resources.GridRotateReset;
+			this.buttonresetgrid.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.buttonresetgrid.Name = "buttonresetgrid";
+			this.buttonresetgrid.Size = new System.Drawing.Size(23, 22);
+			this.buttonresetgrid.Tag = "builder_resetgrid";
+			this.buttonresetgrid.Text = "Reset Grid";
+			this.buttonresetgrid.Click += new System.EventHandler(this.InvokeTaggedAction);
 			// 
 			// separatorfullbrightness
 			// 
@@ -3061,6 +3105,7 @@ namespace CodeImp.DoomBuilder.Windows
 		private System.Windows.Forms.ToolStripSeparator separatorfullbrightness;
 		private System.Windows.Forms.ToolStripSeparator separatorfilters;
 		private System.Windows.Forms.ToolStripSeparator separatorrendering;
+		private System.Windows.Forms.ToolStripSeparator separatorgrid;
 		private System.Windows.Forms.ToolStripMenuItem itemdynlightmodes;
 		private System.Windows.Forms.ToolStripMenuItem itemnodynlights;
 		private System.Windows.Forms.ToolStripMenuItem itemdynlights;
@@ -3105,6 +3150,9 @@ namespace CodeImp.DoomBuilder.Windows
 		private ToolStripMenuItem itemresetgrid;
 		private ToolStripButton buttontogglegrid;
 		private ToolStripButton buttontoggledynamicgrid;
+		private ToolStripButton buttonaligngridtolinedef;
+		private ToolStripButton buttonsetgridorigintovertex;
+		private ToolStripButton buttonresetgrid;
 		private ToolStripMenuItem itemdynamicgridsize;
 		private ToolStripMenuItem itemtogglecomments;
 		private ToolStripMenuItem itemtogglefixedthingsscale;

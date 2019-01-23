@@ -2089,6 +2089,10 @@ namespace CodeImp.DoomBuilder.Windows
 			buttonsplitjoinedsectors.Checked = General.Settings.SplitJoinedSectors; //mxd
 			buttonautoclearsidetextures.Visible = General.Settings.ToolbarGeometry && maploaded; //mxd
 			buttontest.Visible = General.Settings.ToolbarTesting && maploaded;
+			buttonresetgrid.Visible =  General.Settings.ToolbarGeometry && maploaded;
+			buttonsetgridorigintovertex.Visible =  General.Settings.ToolbarGeometry && maploaded;
+			buttonaligngridtolinedef.Visible =  General.Settings.ToolbarGeometry && maploaded;
+			separatorgrid.Visible = General.Settings.ToolbarGeometry && maploaded;
 
 			//mxd
 			modelrendermode.Visible = General.Settings.GZToolbarGZDoom && maploaded;
